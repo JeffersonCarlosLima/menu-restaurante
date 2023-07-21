@@ -34,6 +34,10 @@ b{
     padding: 0 32px !important;
 }
 
+a,.navbar-brand{
+    margin-left: -25px;
+}
+
 .btn-white{
     background-color: var(--color-white);
     color: var(--color-black) !important;
@@ -55,4 +59,22 @@ b{
     border-radius: 16px;
     text-align: center;
     padding-top: 8px;
+}
+.color-primary{
+    color : var(--color-primary)!important ;
+}
+.banner{
+    padding: 120px 0 200px 0;
+}
+.text-benner{
+    display: flex;
+    flex-direction: column;
+}
+.text-benner h1{
+    color: var(--color-black);
+    font-size: 60px;
+}
+.text-benner p{
+    margin: 16px 0 16px 0;
+    font-size: 20px;
 }
