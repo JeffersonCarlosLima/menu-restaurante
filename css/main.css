@@ -18,6 +18,9 @@
     --color-green: #2ecc71;
     --color-separate: #cccccc;
     --shadow-button:0px 15px 20px rgba(0, 0, 0, 0.1);
+    --shadow-button-vcardapio:0px 15px 20px var(--color-primary);
+    --border-radius-button:24px;
+    --border-radius-ico:16px;
 }
 
 
@@ -34,7 +37,7 @@ b{
     padding: 0 32px !important;
 }
 
-a,.navbar-brand{
+.navbar-brand{
     margin-left: -25px;
 }
 
@@ -60,6 +63,23 @@ a,.navbar-brand{
     text-align: center;
     padding-top: 8px;
 }
+.btn-icon-left{
+    padding-left: 70px;
+}
+.btn-icon-left span.icon-left{
+    display: inline-block;
+    color:var(--color-white);
+    background-color: var(--color-primary);
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    margin-top: -8px;
+    margin-left: -60px;
+    border-radius: var(--border-radius-ico);
+    text-align: center;
+    padding-top: 6px;
+
+}
 .color-primary{
     color : var(--color-primary)!important ;
 }
@@ -75,6 +95,14 @@ a,.navbar-brand{
     font-size: 60px;
 }
 .text-benner p{
-    margin: 16px 0 16px 0;
+    margin: 16px 0 16px 0px !important;
     font-size: 20px;
+}
+.btn-yellow{
+    background-color: var(--color-primary);
+    color: var(--color-white) !important;
+    border-radius:var(--border-radius-button);
+    padding: 16px 24px !important;
+    box-shadow: var(--shadow-button);
+
 }
