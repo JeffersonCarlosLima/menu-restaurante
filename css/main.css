@@ -237,3 +237,9 @@ b{
     color: var(--color-black);
     margin-bottom: 16px;
 }
+.card-servicos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
