@@ -265,6 +265,14 @@ b{
     margin-bottom: 150px;
 }
 
+.background-cardapio{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 500px;
+    background-image: url(../img/bg-icons-1.png);
+}
+
 .container-menu{
     margin-bottom: 40px;
 
@@ -344,4 +352,15 @@ b{
 .card-item:hover .price-produto{
     color: var(--color-white);
     margin-top: 8px;
+}
+
+.card-depoimento{
+    width: 350px;
+    height: 350px;
+    border-radius: 20%;
+    background-color: var(--color-primary);
+    position: absolute;
+    right: 0;
+    left: -50;
+    top: -80px;
 }
