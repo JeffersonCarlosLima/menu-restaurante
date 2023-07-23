@@ -506,7 +506,7 @@ align-items: center;
     padding-bottom: 24px;
 }
 .m-body{
-    flex: 1;
+    flex: 1; 
     overflow: auto;
     overflow-x: hidden;
 }
