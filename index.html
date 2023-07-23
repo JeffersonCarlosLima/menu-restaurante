@@ -28,7 +28,7 @@
                 <li class="nav-item"><a href="#cardapio" class="nav-link"><b>Cardapios</b></a></li>
                 <li class="nav-item"><a href="#depoimentos" class="nav-link"><b>Depoimentos</b></a></li>
             </ul>    
-            <button class="btn btn-icon btn-white">Meu carrinho<span class="btn-icon-carrinho"><i class="fas fa-shopping-bag"></i></span></button>        
+            <button class="btn btn-icon btn-white botao-carrinho">Meu carrinho<span class="btn-icon-carrinho"><i class="fas fa-shopping-bag"></i></span></button>        
         </div>
     </nav>
  </div>
@@ -178,6 +178,7 @@
         
 </section>
 <section class="depoimentos" id="depoimentos">
+    <div class="background-depoimentos"></div>
     <div class="container">
         <div class="row">
             <div class="col-5">
@@ -189,16 +190,141 @@
             <div class="col-7">
                 <span class="hint-title"><b>Serviços</b></span>
                 <h1><b>Como são nossos serviços?</b></h1>
+            <!--Depoimento1-->
+                <div class="mb-5">
+                        <div class="depoimento" id="depoimento-1">
+                            <div class="container-dados-depoimento">
+                            <div class="imagem-depoimento"></div>
+                            <div>
+                                <p class="nome-depoimento"><b>Diego Pereira</b></p>
+                                <p class="nota-depoimento">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>&nbsp;
+                                    <span>4.5</span>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="texto-depoimento">
+                            <i class="fas fa-quote-left"></i>
+                            <span>Muito bom, recomendo demais! Comida muito bem feita pelo chef, atendimento dentro do esperado dos parâmetros e boa comunicação com o cliente.</span>
+                            <i class="fas fa-quote-right"></i>
+                        </p>
+                    </div>
+                    <!--Depoimento1-end-->
+                    <!--Depoimento2-->
+                        <div class="depoimento hidden" id="depoimento-2">
+                            <div class="container-dados-depoimento">
+                            <div class="imagem-depoimento"></div>
+                            <div>
+                                <p class="nome-depoimento"><b>Ana Beatriz</b></p>
+                                <p class="nota-depoimento">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>&nbsp;
+                                    <span>5.0</span>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="texto-depoimento">
+                            <i class="fas fa-quote-left"></i>
+                            <span>Um jantar perfeito do começo ao fim. Comida, experiência, serviço... Foi tão maravilhoso que fomos dois dias seguidos, fato inédito para mim em uma viagem.</span>
+                            <i class="fas fa-quote-right"></i>
+                        </p>
+                    </div>
+                    <!--Depoimento2-end-->                
+                    <!--Depoimento3-->
+                        <div class="depoimento hidden" id="depoimento-3">
+                            <div class="container-dados-depoimento">
+                            <div class="imagem-depoimento"></div>
+                            <div>
+                                <p class="nome-depoimento"><b>Joao Guilherme</b></p>
+                                <p class="nota-depoimento">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>&nbsp;
+                                    <span>4.0</span>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="texto-depoimento">
+                            <i class="fas fa-quote-left"></i>
+                            <span>
+                                A comida estava excelente, e o serviço gentil nos surpreendeu. Dica: reserve umas três horas para ter uma experiência incrível.</span>
+                            <i class="fas fa-quote-right"></i>
+                        </p>
+                    </div>
+                    <!--Depoimento3-end-->
+                </div>
+                    <div class="btn-depoimentos">
+                        <a href="" class="btn btn-sm btn-white btn-social active">1</a>
+                        <a href="" class="btn btn-sm btn-white btn-social">2</a>
+                        <a href="" class="btn btn-sm btn-white btn-social">3</a>
+                    </div>
             </div>
         </div>
     </div>
-<!--Depoimentos dos clientes-->
 </section>
-<section class="reserva" id="reservas">
+<!--Depoimentos dos clientes-->
 
+<section class="reserva" id="reservas">
+ <div class="container">
+    <div class="row">
+        <div class="col-12 mt-2">
+            <div class="card-secundary">
+                <div class="row">
+                    <div class="col-7">
+                        <span class="hint-title"><b>Reserva</b></span>
+                        <h1><b>Quer reservar um Horário?</b></h1>
+                        <p class="pr-5">
+                            Envie uma mensagem clicando no botão abaixo <br> para reservar sua data e horário de forma simples e rápida.
+                        </p>
+                        <a href="" class="btn btn-yellow">Fazer reserva</a>
+                    </div>
+                    <div class="col-5">
+                        <div class="card-reserva"></div>
+                        <div class="d-flex img-banner">
+                            <img src="./img//icone-reserva.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
 </section>
 <footer>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-3 container-logo-footer">
+                <img src="./img/logo.png" alt="logomarca" class="logo-footer">
+            </div>
+            <div class="col-6 container-text-footer">
+                <p class="mb-0">
+                    <b>Menu Online</b>&copy; Todos os direitos reservados.
+                </p>
+            </div>
+            <div class="col-3 container-redes-footer">
+               <div class="social-icons">
+                        <a href="" class="btn-social">
+                            <i class="fab fa-instagram"></i>
+                        </a> 
+                        <a href="" class="btn-social">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="" class="btn-social">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </div>
     <!--Footer-->
 </footer>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>

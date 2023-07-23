@@ -35,6 +35,9 @@ html, body {
 b{
     font-family: 'PoppinsMedium';
 }
+.hidden{
+    display: none!important ;
+}
 .nav-link{
     color: var(--color-black) !important;
     padding: 0 32px !important;
@@ -44,6 +47,12 @@ b{
     margin-left: -25px;
 }
 
+.botao-carrinho{
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
 .btn-white{
     background-color: var(--color-white);
     color: var(--color-black) !important;
@@ -51,6 +60,7 @@ b{
     padding: 16px 24px 16px 24px;
     font-size: 16px;
     box-shadow: var(--shadow-button);
+    gap: 8px;
 
 }
 .btn-white.active ,.btn-white:hover{
@@ -59,17 +69,18 @@ b{
     transition: var(--transitionall-03s);
 }
 .btn-icon-carrinho{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color:var(--color-black);
     background-color: var(--color-primary);
     width: 45px;
     height: 45px;
-    position: absolute;
-    right: 10px;
+    
     margin-top: -8px;
     border-radius: 16px;
     text-align: center;
-    padding-top: 8px;
+    padding: 8px;
 }
 
 .color-primary{
@@ -358,9 +369,120 @@ b{
     width: 350px;
     height: 350px;
     border-radius: 20%;
-    background-color: var(--color-primary);
+    background-color: var(--color-secundary);
     position: absolute;
+    left: 0;
+}
+.background-depoimentos{
+    position: absolute;
+    left: 0;
     right: 0;
-    left: -50;
-    top: -80px;
+    height: 500px;
+    background-image: url(../img/bg-icons-1.png);
+}
+.container-dados-depoimento{
+    display: flex;
+}
+.imagem-depoimento{
+    margin-top: 70px;
+    width: 65px;
+    height: 65px;
+    background-color: var(--color-white);
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 16px;
+    background-size: cover;
+}
+#depoimento-1 .imagem-depoimento{
+    background-image: url(../img/diego.jpg);
+
+}
+#depoimento-2 .imagem-depoimento{
+    background-image: url(../img/ana.jpg);
+
+}
+#depoimento-3 .imagem-depoimento{
+    background-image: url(../img/joao.jpg);
+}
+.nome-depoimento{
+    color: var(--color-black);
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+.nota-depoimento{
+    color: var(--color-primary);
+}
+.nota-depoimento span{
+    color:var(--color-black);
+}
+.texto-depoimento{
+    display: flex;
+    font-size: 16px;
+    color: var(--color-black);
+    
+
+}
+.texto-depoimento i{
+    font-size: 35px;
+    color: var(--color-primary);
+}
+
+.texto-depoimento i:first-child{
+    padding-left: 10px;
+    padding-right: 35px;
+
+}
+.texto-depoimento i:last-child{
+    padding-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.btn-depoimentos{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+.reserva{
+    padding: 100px 0 150px 0;
+}
+.card-secundary{
+    background-color: var(--color-secundary);
+    border-radius: 70px;
+    padding: 90px;
+
+}
+.card-reserva{
+    height: 320px;
+    width: 320px;
+    border-radius: 100%;
+    background-color: white;
+    position: absolute;
+    top: -25px;
+    right: 0;
+}
+
+.reserva .img-banner img {
+    width: 100%;
+}
+footer{
+    background-color:var(--color-secundary);
+}
+.logo-footer{
+    width: 150px;
+}
+.container-logo-footer,
+.container-text-footer, .container-redes-footer{
+display: flex;
+align-items: center;
+}
+.container-logo-footer{
+    justify-content: start;
+}
+.container-text-footer{
+    justify-content: center;
+}
+.container-redes-footer{
+    justify-content: end;
 }
