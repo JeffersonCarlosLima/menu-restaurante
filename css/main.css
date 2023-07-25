@@ -20,7 +20,7 @@
     --color-separate: #cccccc;
     --shadow-button:0px 8px 20px rgba(0, 0, 0, 0.2);
     --shadow-button-vcardapio:8px 10px 15px -3px var(--color-primary);
-    --border-radius-button:24px;
+    --border-radius-button:16px;
     --border-radius-ico:16px;
     --transitionall-03s: all 0.3s ease-in-out;
     --transitionall-06s: all 0.6s ease-in-out;
@@ -57,11 +57,17 @@ b{
     background-color: var(--color-white);
     color: var(--color-black) !important;
     border-radius: 20px;
-    padding: 16px 24px 16px 24px;
+    padding: 14px;
     font-size: 16px;
     box-shadow: var(--shadow-button);
     gap: 8px;
 
+}
+.btn-white .botao-carrinho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 4px 4px 8px !important;
 }
 .btn-white.active ,.btn-white:hover{
     background-color: var(--color-primary);
@@ -76,8 +82,6 @@ b{
     background-color: var(--color-primary);
     width: 45px;
     height: 45px;
-    
-    margin-top: -8px;
     border-radius: 16px;
     text-align: center;
     padding: 8px;
@@ -285,7 +289,10 @@ b{
 }
 
 .container-menu{
+    display: flex;
     margin-bottom: 40px;
+    justify-content: center;
+    align-items: center;
 
 }
 .card-item .img-produto img {
@@ -381,10 +388,12 @@ b{
     background-image: url(../img/bg-icons-1.png);
 }
 .container-dados-depoimento{
+    margin-top: 32px;
     display: flex;
+    align-items: center;
+    justify-content: start;
 }
 .imagem-depoimento{
-    margin-top: 70px;
     width: 65px;
     height: 65px;
     background-color: var(--color-white);
@@ -509,6 +518,7 @@ align-items: center;
     flex: 1; 
     overflow: auto;
     overflow-x: hidden;
+    height: 380px !important;
 }
 .m-body::-webkit-scrollbar{
     width: 6px;
@@ -609,7 +619,6 @@ align-items: center;
     justify-content: center;
     align-items: center;
 }
-
 .btn-remove{
     border: 2px solid var(--color-red);
     color: var(--color-white);
@@ -623,7 +632,6 @@ align-items: center;
 
 .container-total{
     padding-top: 20px;
-    border-top: 1px solid var(--color-separate);
 }
 
 .container-total .texto-entrega{
@@ -667,9 +675,24 @@ select.form-control{
     border-radius: 16px;
 }
 .item-carrinho-resumo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-separate);
+    width: 620px;
+    max-width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+ 
+.item-carrinho-resumo .dados-produto{
+    display: flex;
+    flex-direction: column;
+}
+
 .title-produto-resumo{
     color: var(--color-black);
     font-size: 18px;
@@ -688,4 +711,7 @@ select.form-control{
    color: var(--color-black);
    font-size: 20px;
    margin-bottom: 0; 
+}
+.modal-footer{
+    height: 224px;
 }
