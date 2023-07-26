@@ -18,7 +18,7 @@ cardapio.metodos={
         
         $.each(filtro, (i, e)=>{
 
-            let temp = cardapio.templates.item.replace(/\${img}/g, e.img);
+            let temp = cardapio.templates.item.replace(/\${img}/g, e.img).replace(/\${name}/g, e.name).replace(/\${price}/g, e.price);
 
             $("#itensCardapio").append(temp);
         })
@@ -35,10 +35,10 @@ cardapio.templates = {
                     <img src="\${img}"/>
                 </div>
                 <p class="title-produto text-center mt-4">
-                    <b>nome</b>
+                    <b>\${name}</b>
                 </p>
                 <p class="price-produto text-center">
-                    <b>R$ 154,90</b>
+                    <b>R$\${price}</b>
                 </p>
                 <div class="add-carrinho">
                     <spam class="btn-menos"><i class="fas fa-minus"></i></spam>
