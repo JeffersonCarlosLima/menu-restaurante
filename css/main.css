@@ -70,9 +70,14 @@ b{
     padding: 4px 4px 4px 8px !important;
 }
 .btn-white.active ,.btn-white:hover{
-    background-color: var(--color-primary);
+    background-color: var(--color-primary) !important;
     color: var(--color-white) !important;
-    transition: var(--transitionall-03s);
+    transition: var(--transitionall-03s) !important;
+}
+.active{
+    background-color: var(--color-primary) !important;
+    color: var(--color-white) !important;
+    transition: var(--transitionall-03s) !important;
 }
 .btn-icon-carrinho{
     display: flex;

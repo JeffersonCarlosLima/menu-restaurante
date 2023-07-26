@@ -27,9 +27,9 @@ cardapio.metodos={
             $("#itensCardapio").append(temp)
         })
         //remover o ativo após clicar no item
-        $(".container-menu a").removeClass('.active');
+        $(".container-menu a").removeClass('active');
         //Setar menu para ativo
-        $("#menu-" + categoria).addClass('.active');
+        $("#menu-" + categoria).addClass('active');
     },
 
 }
