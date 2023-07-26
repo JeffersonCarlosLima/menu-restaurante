@@ -15,8 +15,11 @@ cardapio.metodos={
         var filtro = MENU['burgers'];
         console.log(filtro);
 
+        
         $.each(filtro, (i, e)=>{
-            let temp = cardapio.templates.item;
+
+            let temp = cardapio.templates.item.replace(/\${img}/g, e.img);
+
             $("#itensCardapio").append(temp);
         })
     },
@@ -29,7 +32,7 @@ cardapio.templates = {
         <div class="col-3 mb-5">
             <div class="card card-item">
                 <div class="img-produto">
-                    <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg" alt="">
+                    <img src="\${img}"/>
                 </div>
                 <p class="title-produto text-center mt-4">
                     <b>nome</b>
