@@ -17,15 +17,15 @@ cardapio.metodos={
 
         $.each(filtro, (i, e)=>{
             let temp = cardapio.templates.item;
-            $(#itensCardapio).append(temp)
+            $("#itensCardapio").append(temp);
         })
     },
 }
 
 
 
-cardapio.templates={
-    item: '
+cardapio.templates = {
+    item: `
         <div class="col-3 mb-5">
             <div class="card card-item">
                 <div class="img-produto">
@@ -45,5 +45,5 @@ cardapio.templates={
                 </div>
             </div>
         </div>
-    '
+    `
 }
