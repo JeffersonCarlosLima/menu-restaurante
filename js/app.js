@@ -9,23 +9,29 @@ cardapio.eventos={
     }
 }
 
+
 cardapio.metodos={
     //obtem a lista de itens json co cardapio
-    obterItensCardapio:()=>{
-        var filtro = MENU['burgers'];
-        console.log(filtro);
+    obterItensCardapio:(categoria = 'burgers')=>{
+        var filtro = MENU[categoria];
         
-        $('#itensCardapio').html('');
+        $("#itensCardapio").html('')
         
         $.each(filtro, (i, e)=>{
 
-            let temp = cardapio.templates.item.replace(/\${img}/g, e.img)
+            let temp = cardapio.templates.item
+            .replace(/\${img}/g, e.img)
             .replace(/\${name}/g, e.name)
             .replace(/\${price}/g, e.price.toFixed(2).replace('.',","));
 
-            $("#itensCardapio").append(temp);
+            $("#itensCardapio").append(temp)
         })
+        //remover o ativo após clicar no item
+        $(".container-menu a").removeClass('.active');
+        //Setar menu para ativo
+        $("#menu-" + categoria).addClass('.active');
     },
+
 }
 
 
