@@ -775,3 +775,22 @@ select.form-control{
     cursor: pointer;
     z-index:1;
 }
+.container-mensagem{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 99999;
+    transition: var(--transitionall-06s);
+}
+.toast{
+    color: var(--color-white);
+    padding: 10px 25px;
+    border-radius: 16px;
+    margin-bottom: 10px;
+}
+.toast.red{
+    background-color: var(--color-red);
+}
+.toast.green{
+    background-color: var(--color-green);
+}

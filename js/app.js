@@ -2,9 +2,7 @@ $(document).ready(function(){
     cardapio.metodos.obterItensCardapio();
 })
 var cardapio = {};
-meu_carrinho=[
-    {"nome":"Hamburger","preco":30,"quantidade":5},
-]
+meu_carrinho=[]
 
 cardapio.eventos={
     init:() => {
@@ -74,17 +72,17 @@ cardapio.metodos={
     //adicionar ao carrinho o item do cardápio
     adicinarCarrinho:(id)=>{
         let qtdAtual = parseInt($("#qtd-" + id).text())
-        if (qtdAtual>0){
+        if (qtdAtual > 0){
             //obter a categoria ativa
             var categoria = $(".container-menu a.active").attr('id').split('menu-')[1];
             //obter a lista de itens
             let filtro = MENU[categoria];
 
             //obter o item que esta sendo adicionado ao carrinho
-            let item = $.grep(filtro, (e, i)=>{return e.id==id})
+            let item = $.grep(filtro, (e, i) => {return e.id==id});
             if(item.length > 0){
                 //validar se ja exite o item no carrinho
-                let existe = $.grep(meu_carrinho, (elemento, index)=>{return elemento.id==id})
+                let existe = $.grep(meu_carrinho, (elem, index)=>{return elem.id==id})
                 //caso exista o item so altera a quantidade
                 if(existe.length > 0){
                     let objindex = meu_carrinho.findIndex(obj => obj.id==id);
@@ -94,38 +92,52 @@ cardapio.metodos={
                     //se nao existir o item no carrinho devera inserir um novo item
                     item[0].qtd = qtdAtual;
                     meu_carrinho.push(item[0])
-                    //alert("Item adicionado ao carrinho");
                 }
+                cardapio.metodos.mensagem('Item adicionado ao carrinho');
                 $("#qtd-"+ id).text(0);
-                
-                console.log(qtdAtual)
+                console.log(meu_carrinho);
                 cardapio.metodos.atualizaBagTotal();
             }
-        }else{
-            alert("Informe antes a quantidade de itens, valor informado é menor que 1")
         }
 
     },
     //Atualiza o bag de total de itens adicionados ao carrinho dos botões do carrinho
     atualizaBagTotal:() => {
         var total = 0;
+
         $.each(meu_carrinho,(i, e)=>{
-            total += e.qtdAtual
+
+            total += e.qtd
+
+            console.log(total)
+
+            return total
         })
+
         if(total > 0){
-            $(".btn-carrinho").removeClass('hidden'),
+        
+            $(".btn-carrinho").removeClass('hidden');
             $(".total-carrinho-in-btn-carrinho").removeClass('hidden');
+        
         }
         else{
-            $(".btn-carrinho").addClass('hidden'),
+        
+            $(".btn-carrinho").addClass('hidden');
             $(".total-carrinho-in-btn-carrinho").addClass('hidden');
+        
         }
+        
         $(".badge-total-carrinho").html(total);
 
     },
+    mensagem:(texto, cor = 'red', tempo = 3500)=>{
+        let msg = `<div class="toast ${cor}">${texto}</div>`;
+        $("#container-mensagem").append(msg);
+        
+        return msg
+    }
+
 }
-
-
 
 cardapio.templates = {
     item: `
@@ -149,5 +161,5 @@ cardapio.templates = {
             </div>
         </div>
     `
-}
+};
 
