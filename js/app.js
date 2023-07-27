@@ -97,7 +97,8 @@ cardapio.metodos={
                     //alert("Item adicionado ao carrinho");
                 }
                 $("#qtd-"+ id).text(0);
-
+                
+                console.log(qtdAtual)
                 cardapio.metodos.atualizaBagTotal();
             }
         }else{
@@ -106,22 +107,22 @@ cardapio.metodos={
 
     },
     //Atualiza o bag de total de itens adicionados ao carrinho dos botões do carrinho
-    atualizaBagTotal:()=>{
+    atualizaBagTotal:() => {
         var total = 0;
         $.each(meu_carrinho,(i, e)=>{
-            total += e.qtd
+            total += e.qtdAtual
         })
         if(total > 0){
             $(".btn-carrinho").removeClass('hidden'),
             $(".total-carrinho-in-btn-carrinho").removeClass('hidden');
-        }else{
+        }
+        else{
             $(".btn-carrinho").addClass('hidden'),
             $(".total-carrinho-in-btn-carrinho").addClass('hidden');
-
         }
-        $(".badge-total-carrinho").html(total)
+        $(".badge-total-carrinho").html(total);
 
-    }
+    },
 }
 
 
