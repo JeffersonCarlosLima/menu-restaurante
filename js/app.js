@@ -79,10 +79,24 @@ cardapio.metodos={
             var categoria = $(".container-menu a.active").attr('id').split('menu-')[1];
             //obter a lista de itens
             let filtro = MENU[categoria];
-            //obter o item
-            let item = $.grep(filtro, (e, i)=>{return e.id==id})
-            if(item){
 
+            //obter o item que esta sendo adicionado ao carrinho
+            let item = $.grep(filtro, (e, i)=>{return e.id==id})
+            if(item.length > 0){
+                //validar se ja exite o item no carrinho
+                let existe = $.grep(meu_carrinho, (elemento, index)=>{return elemento.id==id})
+                //caso exista o item so altera a quantidade
+                if(existe.length > 0){
+                    let objindex = meu_carrinho.findIndex(obj => obj.id==id);
+                    meu_carrinho[objindex].qtd = meu_carrinho[objindex].qtd + qtdAtual;
+                    //alert("Item adicionado ao carrinho");
+                }else{
+                    //se nao existir o item no carrinho devera inserir um novo item
+                    item[0].qtd = qtdAtual;
+                    meu_carrinho.push(item[0])
+                    //alert("Item adicionado ao carrinho");
+                }
+                $("#qtd-"+ id).text(0);
             }
         }else{
             alert("Informe antes a quantidade de itens, valor informado é menor que 1")
