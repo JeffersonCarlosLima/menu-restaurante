@@ -10,6 +10,10 @@
     <title>Menu</title>
 </head>
 <body>
+    <a class="btn-carrinho hidden">
+        <div class="badge-total-carrinho">8</div>
+        <i class="fas fa-shopping-bag"></i>
+    </a>
 <section class="header">
  <div class="container">
     <nav class="navbar navbar-expand-lg pl-0 pr-0">
@@ -27,8 +31,15 @@
                 <li class="nav-item"><a href="#servicos" class="nav-link"><b>Serviços</b></a></li>
                 <li class="nav-item"><a href="#cardapio" class="nav-link"><b>Cardapios</b></a></li>
                 <li class="nav-item"><a href="#depoimentos" class="nav-link"><b>Depoimentos</b></a></li>
-            </ul>    
-            <button class="btn btn-icon btn-white botao-carrinho">Meu carrinho<span class="btn-icon-carrinho"><i class="fas fa-shopping-bag"></i></span></button>        
+            </ul>
+                
+            <button class="btn btn-icon btn-white botao-carrinho">
+                Meu carrinho
+                <span class="btn-icon-carrinho">
+                    <div class="badge-total-carrinho total-carrinho-in-btn-carrinho hidden">8</div>
+                    <i class="fas fa-shopping-bag"></i>
+                </span>
+            </button>        
         </div>
     </nav>
  </div>

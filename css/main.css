@@ -738,3 +738,40 @@ select.form-control{
     margin-bottom: 0;
     color: var(--color-black);
 }
+.badge-total-carrinho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute !important;
+    width: 25px;
+    height: 25px;
+    right: -5px;
+    top: -5px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: var(--color-secundary);
+    color: var(--color-primary);
+    border-radius:100%!important;
+}
+.botao-carrinho .badge-total-carrinho{
+    right: 10px !important;
+    top: 60px !important;
+    
+}
+.btn-carrinho{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 30px;
+    bottom: 50px;
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-black-heavyu) !important;
+    box-shadow: var(--shadow-button);
+    border-radius: 100%;
+    cursor: pointer;
+    z-index:1;
+}
