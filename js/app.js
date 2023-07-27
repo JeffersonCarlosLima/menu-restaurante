@@ -93,7 +93,7 @@ cardapio.metodos={
                     item[0].qtd = qtdAtual;
                     meu_carrinho.push(item[0])
                 }
-                cardapio.metodos.mensagem('Item adicionado ao carrinho');
+                cardapio.metodos.mensagem('Item adicionado ao carrinho','green');
                 $("#qtd-"+ id).text(0);
                 console.log(meu_carrinho);
                 cardapio.metodos.atualizaBagTotal();
@@ -130,10 +130,27 @@ cardapio.metodos={
         $(".badge-total-carrinho").html(total);
 
     },
+    //abrir o modal de carrinho
+    abrirCarrinho:(abrir)=>{
+        if(abrir){
+            $('#modal-carrinho').removeClass('hidden');
+        }else{
+            $('#modal-carrinho').addClass('hidden');
+        }
+    },
+    //mensgens de aviso e notificações
     mensagem:(texto, cor = 'red', tempo = 3500)=>{
-        let msg = `<div class="toast ${cor}">${texto}</div>`;
+        let id = Math.floor(Date.now() * Math.random()).toString();
+        let msg = `<div id="msg-${id}" class="animated fadeInDown toast ${cor}">${texto}</div>`;
         $("#container-mensagem").append(msg);
-        
+        setTimeout(()=>{
+            $("#msg-"+id).removeClass('fadeInDown');
+            $("#msg-"+id).addClass('fadeOutUp');
+            setTimeout(()=>{
+                $("#msg-"+id).remove();
+            },1000);
+        }, tempo)
+
         return msg
     }
 

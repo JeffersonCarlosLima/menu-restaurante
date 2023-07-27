@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontawesome.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/main.css">
 
     <title>Menu</title>
 </head>
 <body>
     <div class="container-mensagem" id="container-mensagem"></div>
-    <a class="btn-carrinho hidden">
+    <a onclick="cardapio.metodos.abrirCarrinho(true)" class="btn-carrinho hidden" >
         <div class="badge-total-carrinho">0</div>
-        <i class="fas fa-shopping-bag"></i>
+        <i  class="fas fa-shopping-bag"></i>
     </a>
 <section class="header">
  <div class="container">
@@ -34,7 +35,7 @@
                 <li class="nav-item"><a href="#depoimentos" class="nav-link"><b>Depoimentos</b></a></li>
             </ul>
                 
-            <button class="btn btn-icon btn-white botao-carrinho">
+            <button onclick="cardapio.metodos.abrirCarrinho(true)" class="btn btn-icon btn-white botao-carrinho">
                 Meu carrinho
                 <span class="btn-icon-carrinho">
                     <div class="badge-total-carrinho total-carrinho-in-btn-carrinho hidden">0</div>
@@ -325,7 +326,7 @@
 <div class="modal-full hidden" id="modal-carrinho">
     <div class="m-header">
         <div class="container">
-          <a href="" class="btn-white btn-sm float-right">Fechar</a>  
+          <a onclick="cardapio.metodos.abrirCarrinho(false)" class="btn-white btn-sm float-right">Fechar</a>  
           <div class="etapas">
               <div class="etapa etapa-1 active">1</div>
               <div class="etapa etapa-2">2</div>
