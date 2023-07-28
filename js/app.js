@@ -149,7 +149,7 @@ cardapio.metodos={
     abrirCarrinho:(abrir)=>{
         if(abrir){
             $('#modal-carrinho').removeClass('hidden');
-            cardapio.metodos.carregarEtapa(1)
+            cardapio.metodos.carregarCarrinho();
         }else{
             $('#modal-carrinho').addClass('hidden');
         }
@@ -157,7 +157,7 @@ cardapio.metodos={
     //carrega a etapa
     carregarEtapa:(etapa)=>{
         if(etapa == 1){
-            $("#lblTituloEtapa").text("Seu Carrinho:")
+            $("#lblTituloEtapa").text("Seu Carrinho:");
             $("#itensCarrinho").removeClass('hidden');
             $("#LocalEntrega").addClass('hidden');
             $("#resumoCarrinho").addClass('hidden');
@@ -169,31 +169,32 @@ cardapio.metodos={
             $("#btnEtapaEndereco").addClass('hidden');
             $("#btnEtapaResumo").addClass('hidden');
             $("#btnVoltar").addClass('hidden');
-        }
-        if(etapa == 2){
-            $("#lblTituloEtapa").text("Endereço de entrega:")
+        }if(etapa == 2){
+
+            $("#lblTituloEtapa").text("Endereço de entrega:");
             $("#itensCarrinho").addClass('hidden');
-            $("#LocalEntrega").removelass('hidden');
+            $("#LocalEntrega").removeClass('hidden');
             $("#resumoCarrinho").addClass('hidden');
 
             $(".etapa").removeClass('active');
-            //$(".etapa-1").addClass('active');
+            $(".etapa-1").addClass('active');
             $(".etapa-2").addClass('active');
             
             $("#btnEtapaPedido").addClass('hidden');
             $("#btnEtapaEndereco").removeClass('hidden');
             $("#btnEtapaResumo").addClass('hidden');
             $("#btnVoltar").removeClass('hidden');
-        }
-        if(etapa == 3){
-            $("#lblTituloEtapa").text("Endereço de entrega:")
+        
+        }if(etapa == 3){
+
+            $("#lblTituloEtapa").text("Endereço de entrega:");
             $("#itensCarrinho").addClass('hidden');
-            $("#LocalEntrega").removelass('hidden');
-            $("#resumoCarrinho").addClass('hidden');
+            $("#LocalEntrega").addClass('hidden');
+            $("#resumoCarrinho").removeClass('hidden');
 
             $(".etapa").removeClass('active');
-            //$(".etapa-1").addClass('active');
-            //$(".etapa-2").addClass('active');
+            $(".etapa-1").addClass('active');
+            $(".etapa-2").addClass('active');
             $(".etapa-3").addClass('active');
             
             $("#btnEtapaPedido").addClass('hidden');
@@ -202,8 +203,36 @@ cardapio.metodos={
             $("#btnVoltar").removeClass('hidden');
     }
 
-    }
+    },
+    //retornar para a etapa anterior
+    voltarEtapa:() => {
+        let etapa = $(".etapa.active").length;
+        cardapio.metodos.carregarEtapa(etapa - 1);
+    },
+    //carrega itens adicionados ao carrinho
+    carregarCarrinho:()=>{
+        cardapio.metodos.carregarEtapa(1);
+
+        if(meu_carrinho.length > 0){
+
+        }
+        else{
+            console.log("sem items no cart");
+
+        }
+
+    },
+    aumentarQuantidadeCarrinho: (id)=>{
+
+    },
+    diminuirQuantidadeCarrinho: (id)=>{
+
+    },
+    removeItemCarrinho: (id) => {
+
+    },
 },
+
 
 cardapio.templates = {
     item: `
@@ -216,7 +245,7 @@ cardapio.templates = {
                     <b>\${name}</b>
                 </p>
                 <p class="price-produto text-center">
-                    <b>R$\${price}</b>
+                    <b>R$ \${price}</b>
                 </p>
                 <div class="add-carrinho">
                     <spam class="btn-menos" onclick="cardapio.metodos.diminuirQuantidadeItens('\${id}')"><i class="fas fa-minus"></i></spam>
@@ -226,6 +255,26 @@ cardapio.templates = {
                 </div>
             </div>
         </div>
+    `,
+    intensCarrinho:
+    `
+    <div class="col-12 item-carrinho">
+        <div class="info-produto">
+            <div class="img-produto">
+                <img class="img-produto" src="\${img}" alt="">
+            </div>
+            <div class="dados-produto">
+                <p class="title-produto"><b>\${name}</b></p>
+                <p class="price-produto"><b>R$ \${price}</b></p>
+            </div>
+        </div>
+        <div class="add-carrinho">
+            <spam class="btn-menos" onclick="cardapio.metodos.diminuirQuantidadeCarrinho('\${id}')"><i class="fas fa-minus"></i></spam>
+            <spam class="add-numero-itens" id="qtd-carrinho\${id}"></spam>
+            <spam class="btn-mais" onclick="cardapio.metodos.aumentarQuantidadeCarrinho('\${id}')"><i class="fas fa-plus"></i></spam>
+            <spam class="btn btn-remove" onclick="cardapio.metodos.removeItemCarrinho('\${id}')"><i class="fas fa-times"></i></spam>
+        </div>
+    </div>
     `
 };
 
