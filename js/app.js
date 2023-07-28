@@ -149,6 +149,7 @@ cardapio.metodos={
     abrirCarrinho:(abrir)=>{
         if(abrir){
             $('#modal-carrinho').removeClass('hidden');
+            cardapio.metodos.carregarEtapa(1)
         }else{
             $('#modal-carrinho').addClass('hidden');
         }
@@ -156,16 +157,53 @@ cardapio.metodos={
     //carrega a etapa
     carregarEtapa:(etapa)=>{
         if(etapa ==1){
-            $("lblTituloEtapa").text("Seu Carrinho:")
+            $("#lblTituloEtapa").text("Seu Carrinho:")
+            $("#itensCarrinho").removeClass('hidden');
+            $("#LocalEntrega").addClass('hidden');
+            $("#resumoCarrinho").addClass('hidden');
+
+            $(".etapa").removeClass('active');
+            $(".etapa-1").addClass('active');
+            
+            $("#btnEtapaPedido").removeClass('hidden');
+            $("#btnEtapaEndereco").addClass('hidden');
+            $("#btnEtapaResumo").addClass('hidden');
+            $("#btnVoltar").addClass('hidden');
         }
         if(etapa ==2){
+            $("#lblTituloEtapa").text("Endereço de entrega:")
+            $("#itensCarrinho").addClass('hidden');
+            $("#LocalEntrega").removelass('hidden');
+            $("#resumoCarrinho").addClass('hidden');
 
+           // $(".etapa").removeClass('active');
+           // $(".etapa-1").addClass('active');
+            $(".etapa-2").addClass('active');
+            
+            $("#btnEtapaPedido").addClass('hidden');
+            $("#btnEtapaEndereco").removeClass('hidden');
+            $("#btnEtapaResumo").addClass('hidden');
+            $("#btnVoltar").removeClass('hidden');
         }
         if(etapa ==3){
+            $("#lblTituloEtapa").text("Endereço de entrega:")
+            $("#itensCarrinho").addClass('hidden');
+            $("#LocalEntrega").removelass('hidden');
+            $("#resumoCarrinho").addClass('hidden');
 
+            $(".etapa").removeClass('active');
+            $(".etapa-1").addClass('active');
+            $(".etapa-2").addClass('active');
+            $(".etapa-3").addClass('active');
+            
+            $("#btnEtapaPedido").addClass('hidden');
+            $("#btnEtapaEndereco").addClass('hidden');
+            $("#btnEtapaResumo").removeClass('hidden');
+            $("#btnVoltar").removeClass('hidden');
     }
 
-}
+    }
+},
 
 cardapio.templates = {
     item: `
