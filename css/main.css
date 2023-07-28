@@ -313,6 +313,9 @@ b{
     margin-bottom: 8px;
 
 }
+.card-item:hover{
+    padding-bottom:50px;
+}
 .card-item:hover .title-produto{
     display: none;
     transition: var(--transitionall-03s);
