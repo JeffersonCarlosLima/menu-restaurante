@@ -61,7 +61,7 @@ cardapio.metodos={
             if(qtdAtual > 0){
 
                 $("#qtd-" + id).text(qtdAtual - 1)
-                console.log("Diminuindo")
+        
         }
     },
     aumentarQuantidadeItens:(id)=>{
@@ -214,22 +214,60 @@ cardapio.metodos={
         cardapio.metodos.carregarEtapa(1);
 
         if(meu_carrinho.length > 0){
-
+            $("#itensCarrinho").html('');
+            $.each(meu_carrinho, (i, e) => {
+                let temp = cardapio.templates.intensCarrinho 
+                .replace(/\${img}/g, e.img)
+                .replace(/\${name}/g, e.name)
+                .replace(/\${id}/g, e.id)
+                .replace(/\${qntd}/g, e.qtd)
+                .replace(/\${price}/g, e.price.toFixed(2).replace('.',",")); 
+                $("#itensCarrinho").append(temp);
+            })
         }
         else{
+            $("#itensCarrinho").html('<div class="container-carrinho-vazio"><p class="carrinho-vazio"><i class="fas fa-shopping-bag" aria-hidden="true"></i>Seu carrinho está vazio.</p></div>')
             console.log("sem items no cart");
 
         }
 
     },
     aumentarQuantidadeCarrinho: (id)=>{
+        
+        let qtdAtual = parseInt($("#qtd-carrinho" + id).text());
+
+        if(qtdAtual > 0){
+
+            $("#qtd-carrinho" + id).text(qtdAtual + 1);
+            cardapio.metodos.atualizarCarrinho(id, qtdAtual + 1);
+            
+    }
 
     },
     diminuirQuantidadeCarrinho: (id)=>{
+        
+        let qtdAtual = parseInt($("#qtd-carrinho" + id).text());
 
+        if(qtdAtual > 0){
+
+            $("#qtd-carrinho" + id).text(qtdAtual - 1)
+            cardapio.metodos.atualizarCarrinho(id, qtdAtual - 1);
+            
+    }else{
+        cardapio.metodos.removeItemCarrinho(id)
+    }
     },
     removeItemCarrinho: (id) => {
 
+    },
+    //Atualização dos itens do carrinho
+    atualizarCarrinho:(id, qntd)=>{
+
+        let objindex = meu_carrinho.findIndex((obj => obj.id == id));
+        meu_carrinho[objindex].qntd = qntd;
+        
+        //Atualiza o botão carrinho
+        cardapio.metodos.atualizaBagTotal();
     },
 },
 
@@ -270,7 +308,7 @@ cardapio.templates = {
         </div>
         <div class="add-carrinho">
             <spam class="btn-menos" onclick="cardapio.metodos.diminuirQuantidadeCarrinho('\${id}')"><i class="fas fa-minus"></i></spam>
-            <spam class="add-numero-itens" id="qtd-carrinho\${id}"></spam>
+            <spam class="add-numero-itens" id="qtd-carrinho\${id}">\${qntd}</spam>
             <spam class="btn-mais" onclick="cardapio.metodos.aumentarQuantidadeCarrinho('\${id}')"><i class="fas fa-plus"></i></spam>
             <spam class="btn btn-remove" onclick="cardapio.metodos.removeItemCarrinho('\${id}')"><i class="fas fa-times"></i></spam>
         </div>

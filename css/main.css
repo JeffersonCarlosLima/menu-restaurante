@@ -797,3 +797,52 @@ select.form-control{
 .toast.green{
     background-color: var(--color-green);
 }
+.container-carrinho-vazio{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carrinho-vazio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-top: 50px;
+    gap: 16px;
+}
+.carrinho-vazio i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 32px;
+    margin:  0 auto;
+    border-radius: 100%;
+    background-color: var(--color-secundary);
+    color: var(--color-primary);
+}
+@media screen and (max-width: 768px) {
+    html{
+        width: auto;
+        height: auto;
+    }
+    .navbar{
+        width: auto !important;
+
+    }
+    .img-banner img,.card-banner {
+        display: none;
+    }
+    .text-benner h1{
+       font-size: 20px;  
+    }
+    .container-menu{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
