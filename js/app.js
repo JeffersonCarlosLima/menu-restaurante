@@ -156,7 +156,7 @@ cardapio.metodos={
     },
     //carrega a etapa
     carregarEtapa:(etapa)=>{
-        if(etapa ==1){
+        if(etapa == 1){
             $("#lblTituloEtapa").text("Seu Carrinho:")
             $("#itensCarrinho").removeClass('hidden');
             $("#LocalEntrega").addClass('hidden');
@@ -170,14 +170,14 @@ cardapio.metodos={
             $("#btnEtapaResumo").addClass('hidden');
             $("#btnVoltar").addClass('hidden');
         }
-        if(etapa ==2){
+        if(etapa == 2){
             $("#lblTituloEtapa").text("Endereço de entrega:")
             $("#itensCarrinho").addClass('hidden');
             $("#LocalEntrega").removelass('hidden');
             $("#resumoCarrinho").addClass('hidden');
 
-           // $(".etapa").removeClass('active');
-           // $(".etapa-1").addClass('active');
+            $(".etapa").removeClass('active');
+            //$(".etapa-1").addClass('active');
             $(".etapa-2").addClass('active');
             
             $("#btnEtapaPedido").addClass('hidden');
@@ -185,15 +185,15 @@ cardapio.metodos={
             $("#btnEtapaResumo").addClass('hidden');
             $("#btnVoltar").removeClass('hidden');
         }
-        if(etapa ==3){
+        if(etapa == 3){
             $("#lblTituloEtapa").text("Endereço de entrega:")
             $("#itensCarrinho").addClass('hidden');
             $("#LocalEntrega").removelass('hidden');
             $("#resumoCarrinho").addClass('hidden');
 
             $(".etapa").removeClass('active');
-            $(".etapa-1").addClass('active');
-            $(".etapa-2").addClass('active');
+            //$(".etapa-1").addClass('active');
+            //$(".etapa-2").addClass('active');
             $(".etapa-3").addClass('active');
             
             $("#btnEtapaPedido").addClass('hidden');
