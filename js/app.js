@@ -130,14 +130,6 @@ cardapio.metodos={
         $(".badge-total-carrinho").html(total);
 
     },
-    //abrir o modal de carrinho
-    abrirCarrinho:(abrir)=>{
-        if(abrir){
-            $('#modal-carrinho').removeClass('hidden');
-        }else{
-            $('#modal-carrinho').addClass('hidden');
-        }
-    },
     //mensgens de aviso e notificações
     mensagem:(texto, cor = 'red', tempo = 3500)=>{
         let id = Math.floor(Date.now() * Math.random()).toString();
@@ -150,8 +142,27 @@ cardapio.metodos={
                 $("#msg-"+id).remove();
             },1000);
         }, tempo)
-
+        
         return msg
+    },
+    //abrir o modal de carrinho
+    abrirCarrinho:(abrir)=>{
+        if(abrir){
+            $('#modal-carrinho').removeClass('hidden');
+        }else{
+            $('#modal-carrinho').addClass('hidden');
+        }
+    },
+    //carrega a etapa
+    carregarEtapa:(etapa)=>{
+        if(etapa ==1){
+            $("lblTituloEtapa").text("Seu Carrinho:")
+        }
+        if(etapa ==2){
+
+        }
+        if(etapa ==3){
+
     }
 
 }
