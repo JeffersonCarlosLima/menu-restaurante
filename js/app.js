@@ -228,14 +228,19 @@ cardapio.metodos={
                 .replace(/\${price}/g, e.price.toFixed(2).replace('.',",")); 
                 $("#itensCarrinho").append(temp);
                 //carrega os valores do carrinho
-                cardapio.metodos.carregarValoresCarrinho();
+                if((i + 1) == meu_carrinho.length){
+                    cardapio.metodos.carregarValoresCarrinho();
+
+                }
             })
 
 
         }
         else{
             $("#itensCarrinho").html('<div class="container-carrinho-vazio"><p class="carrinho-vazio"><i class="fas fa-shopping-bag" aria-hidden="true"></i>Seu carrinho está vazio.</p></div>')
-            console.log("sem items no cart");
+            cardapio.metodos.carregarValoresCarrinho();
+            //console.log("sem items no cart");
+
 
         }
 
@@ -285,12 +290,12 @@ cardapio.metodos={
 
         meu_carrinho[objindex].qtd = qtd;
 
-        console.log("carrinho atualizado")
-
-        //Atualiza o botão carrinho com a qtd atualizada
-        cardapio.metodos.atualizaBagTotal();
+        
         //carrega os valores do carrinho
         cardapio.metodos.carregarValoresCarrinho();
+        //Atualiza o botão carrinho com a qtd atualizada
+        cardapio.metodos.atualizaBagTotal();
+        console.log("carrinho atualizado")
 
 
     },
@@ -298,19 +303,27 @@ cardapio.metodos={
     carregarValoresCarrinho:()=>{
 
         valor_carrinho = 0;
-        $("lblSubTotal").text('R$ 0,00');
-        $("lblValorEntrega").text('+ R$ 0,00');
-        $("lblValorTotal").text('R$ 0,00');
+
+        $("#lblSubTotal").text('R$ 0,00');
+        $("#lblValorEntrega").text('+ R$ 0,00');
+        $("#lblValorTotal").text('R$ 0,00');
+
+        //console.log('alteração de valores ok');
         
         $.each(meu_carrinho, (i, e) => {
             valor_carrinho += parseFloat(e.price * e.qtd);
+        //console.log('valor do carrinho calculado com sucesso!');
+
 
             if((i + 1) == meu_carrinho.length){
-                $("lblSubTotal").text(`R$ ${valor_carrinho.toFixed(2).replace('.', ',')}`);
-                $("lblValorEntrega").text(`+ R$ ${valor_entrega.toFixed(2).replace('.' , ',')}`);
-                $("lblValorTotal").text(`R$ ${(valor_entrega + valor_carrinho).toFixed(2).replace('.', ',')}`);
+                $("#lblSubTotal").text(`R$ ${valor_carrinho.toFixed(2).replace('.', ',')}`);
+                $("#lblValorEntrega").text(`+ R$ ${valor_entrega.toFixed(2).replace('.' , ',')}`);
+                $("#lblValorTotal").text(`R$ ${(valor_entrega + valor_carrinho).toFixed(2).replace('.', ',')}`);
+                //console.log('dados inseridos com sucesso!');
+            
             }
         })
+        return
     },
 },
 
