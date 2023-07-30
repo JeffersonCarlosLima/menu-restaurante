@@ -347,7 +347,7 @@
                     <div class="form-group container-cep">
                         <label for="txtCEP">CEP:</label>
                         <input class="form-control" type="text" name="texto-CEP" id="txtCEP" placeholder="Ex:77800-000">
-                        <a class="btn btn-yellow btn-sm" href="http://"><i class="fa fa-search"></i></a>
+                        <a class="btn btn-yellow btn-sm" onclick="cardapio.metodos.buscarCEP()"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
                 <div class="col-8"></div>
@@ -482,7 +482,7 @@
                 </p>
             </div>
             <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right" id="btnEtapaPedido" >Continuar</a>
-            <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right" id="btnEtapaEndereco" >Revisar Pedido</a>
+            <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right" id="btnEtapaEndereco" >Revisar Pedido</a>
             <a onclick="" class="btn btn-yellow float-right" id="btnEtapaResumo" >Enviar Pedido</a>
             <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-white float-right mr-3" id="btnVoltar" >Voltar</a>
         </div>

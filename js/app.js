@@ -6,6 +6,8 @@ var meu_carrinho = [];
 var valor_carrinho = 0;
 var valor_entrega = 6;
 
+var meu_endereco = null;
+
 
 cardapio.eventos={
     init:() => {
@@ -335,9 +337,108 @@ cardapio.metodos={
 
     },
     buscarCEP:()=>{
-        var CEP =  txtCEP.val().trim()
-        viacep.com.br/ws/{CEP}/json/
-    }
+        //cria variavel com valor do CEP digitado(Regexp)
+        var CEP =  $("#txtCEP").val().trim().replace(/\D/g,'');
+
+        
+        
+        if(CEP != ""){
+            //expressao regurar para validacao do cep
+            var validacep = /^[0-9]{8}/;
+
+            //verificar se o cep possui os valores
+            if(validacep.test(CEP)){
+                $.getJSON("https://viacep.com.br/ws/"+CEP+"/json?callback=?",function(dados){
+                    if(!("erro" in dados)){
+                        //atualizar os campos com os valores retornados pela api.
+                        $("#txtEndereco").val(dados.logradouro);
+                        $("#txtBairro").val(dados.bairro);
+                        $("#txtCidade").val(dados.localidade);
+                        $("#ddlUF").val(dados.uf);
+                        
+                        $("#txtNumero").focus();
+                        cardapio.metodos.mensagem('Para finalizar informe o numero da suas residencia.', 'green');
+
+                    }else{
+                        cardapio.metodos.mensagem('CEP nao localizado, preencha as informacoes manualmente.');
+                        $("#txtEndereco").focus();
+
+
+                    }
+                });
+                
+            }else{
+                cardapio.metodos.mensagem('O CEP digitado e invalido');
+                $("#txtCEP").focus();
+
+            }
+        }
+        else{
+            cardapio.metodos.mensagem('Informe o CEP, por favor.');
+            $("#txtCEP").focus();
+        }
+        return
+    },
+    //validacao antes de seguir para a etapa  3
+    resumoPedido:()=>{
+
+        let cep = $("#textCEP").val().trim();
+        let endereco = $("#txtEndereco").val().trim();
+        let bairro = $("#txtBairro").val().trim();
+        let cidade= $("#txtCidade").val().trim();
+        let uf = $("#ddlUF").val().trim();
+        let num = $("#txtNumero").val().trim();
+        let complemento = $("#txtComplemento").val().trim();
+
+        if(cep.length <= 0){
+            cardapio.metodos.mensagem('CEP invalido', 'red');
+            $("#textCEP").focus();
+            return;
+        }
+        if(endereco.length <= 0){
+            cardapio.metodos.mensagem('Informe o endereco', 'red');
+            $("#txtEndereco").focus();
+            return;
+        }
+        if(bairro.length <=0 ){
+            cardapio.metodos.mensagem('Informe o bairro', 'red');
+            $("#txtBairro").focus();
+            return;
+        }
+        if(cidade.length <=0 ){
+            cardapio.metodos.mensagem('Informe a cidade', 'red');
+            $("#txtCidade").focus();
+            return;
+        }
+        if(uf === "-1"){
+            cardapio.metodos.mensagem('Informe o (UF) Estado', 'red');
+            $("#ddlUF").focus();
+            return;
+        }
+        if(num.length <= 0){
+            cardapio.metodos.mensagem('Informe o numero da sua residencia', 'red');
+            $("#txtNumero").focus();
+            return;
+        }
+        if(complemento.length <= 0){
+            cardapio.metodos.mensagem('Informe um complemento para seu endereco', 'red');
+            $("#txtComplemento").focus();
+            return;
+        }
+        meu_endereco = {
+            cep:cep,
+            endereco:endereco,
+            bairro: bairro,
+            cidade: cidade,
+            uf: uf,
+            num: num,
+            complemento: complemento
+            
+        }
+        console.log(meu_endereco);
+        cardapio.metodos.carregarEtapa(3);
+        return;
+    },
 },
 
 
