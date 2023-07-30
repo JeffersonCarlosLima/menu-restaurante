@@ -325,6 +325,19 @@ cardapio.metodos={
         })
         return
     },
+      //carrega etapa de endereco
+      carregarEndereco:()=>{
+        //realiza validacao se o carrinho esta vazio.
+        if(meu_carrinho.length <=0){
+            cardapio.metodos.mensagem('Seu carrinho esta vazio.');
+            return;
+        }cardapio.metodos.carregarEtapa(2)
+
+    },
+    buscarCEP:()=>{
+        var CEP =  txtCEP.val().trim()
+        viacep.com.br/ws/{CEP}/json/
+    }
 },
 
 
