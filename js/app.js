@@ -338,7 +338,7 @@ cardapio.metodos={
     },
     buscarCEP:()=>{
         //cria variavel com valor do CEP digitado(Regexp)
-        var CEP =  $("#txtCEP").val().trim().replace(/\D/g,'');
+        var CEP = $("#txtCEP").val().trim().replace(/\D/g,'');
 
         
         
@@ -382,7 +382,7 @@ cardapio.metodos={
     //validacao antes de seguir para a etapa  3
     resumoPedido:()=>{
 
-        let cep = $("#textCEP").val().trim();
+        let cep = $("#txtCEP").val().trim();
         let endereco = $("#txtEndereco").val().trim();
         let bairro = $("#txtBairro").val().trim();
         let cidade= $("#txtCidade").val().trim();
@@ -392,7 +392,7 @@ cardapio.metodos={
 
         if(cep.length <= 0){
             cardapio.metodos.mensagem('CEP invalido', 'red');
-            $("#textCEP").focus();
+            $("#txtCEP").focus();
             return;
         }
         if(endereco.length <= 0){
@@ -435,9 +435,47 @@ cardapio.metodos={
             complemento: complemento
             
         }
-        console.log(meu_endereco);
+        //console.log(meu_endereco);
         cardapio.metodos.carregarEtapa(3);
+        cardapio.metodos.caregarResumo();
         return;
+    },
+    //carrega o resumo do pedido.
+    caregarResumo:() => {
+        $("#listaItensResumo").html('');
+
+        $.each(meu_carrinho, (i, e) => {
+            let temp = cardapio.templates.itensResumo
+                .replace(/\${img}/g, e.img)
+                .replace(/\${name}/g, e.name)
+                .replace(/\${qntd}/g, e.qtd)
+                .replace(/\${price}/g, e.price.toFixed(2).replace('.',",")); 
+                
+                $("#listaItensResumo").append(temp);
+                //console.log(temp);
+
+        });
+                //montando endereco do resumo do pedido
+                $("#resumoEndereco").html(`${meu_endereco.endereco}, ${meu_endereco.numero}, ${meu_endereco.bairro}, ${meu_endereco.num} `);
+                $("#cidade-endreco").html(`${meu_endereco.cidade}-${meu_endereco.uf} / ${meu_endereco.cep} - ${meu_endereco.complemento}`);
+                cardapio.metodos.finalizarPedido();
+
+    },
+    //envia o pedido pelo whatsapp
+    //atualiza o link do botao do whatsapp
+    //https://wa.me/55+DDD+Numero?text=Mensagem
+    finalizarPedido:()=>{
+        console.log("Enviando Pedido");
+        if(meu_carrinho.length > 0 && meu_endereco != null){
+            var text = 'Ola gostaria de fazer um pedido:';
+            text += `\n *Itens do pedido:\n\n\${itens}*`
+            text += `\n*Endereco de entrega:*`
+            text += `\n*\${meu_endereco.endereco}*`
+        }
+
+            
+
+
     },
 },
 
@@ -483,6 +521,21 @@ cardapio.templates = {
             <spam class="btn btn-remove" onclick="cardapio.metodos.removeItemCarrinho('\${id}')"><i class="fas fa-times"></i></spam>
         </div>
     </div>
-    `
+    `,
+itensResumo:
+    `<div class="col-12  item-carrinho-resumo">
+        <div class="img-produto-resumo">
+            <img src="\${img}" alt="imagem do produto">
+        </div>
+        <div class="dados-produto">
+            <p class="title-produto-resumo"><b>\${name}</b></p>
+            <p class="price-produto-resumo">
+                <b>R$ \${price}</b>
+            </p>
+        </div>
+        <p class="quantidade-produto-resumo">
+            x <b>\${qntd}</b>
+        </p>
+    </div>`
 };
 
