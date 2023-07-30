@@ -456,8 +456,9 @@ cardapio.metodos={
 
         });
                 //montando endereco do resumo do pedido
-                $("#resumoEndereco").html(`${meu_endereco.endereco}, ${meu_endereco.numero}, ${meu_endereco.bairro}, ${meu_endereco.num} `);
+                $("#resumoEndereco").html(`${meu_endereco.endereco}, ${meu_endereco.bairro}, ${meu_endereco.num} `);
                 $("#cidade-endreco").html(`${meu_endereco.cidade}-${meu_endereco.uf} / ${meu_endereco.cep} - ${meu_endereco.complemento}`);
+                
                 cardapio.metodos.finalizarPedido();
 
     },
@@ -465,13 +466,34 @@ cardapio.metodos={
     //atualiza o link do botao do whatsapp
     //https://wa.me/55+DDD+Numero?text=Mensagem
     finalizarPedido:()=>{
-        console.log("Enviando Pedido");
+
+        //console.log("Enviando Pedido");
+
         if(meu_carrinho.length > 0 && meu_endereco != null){
             var text = 'Ola gostaria de fazer um pedido:';
-            text += `\n *Itens do pedido:\n\n\${itens}*`
-            text += `\n*Endereco de entrega:*`
-            text += `\n*\${meu_endereco.endereco}*`
-        }
+            text += `\n *Itens do pedido:*\n\n\${itens}`;
+            text += '\n*Endereco de entrega:*';
+            text += `\n${meu_endereco.endereco}, ${meu_endereco.bairro}, ${meu_endereco.num}`;
+            text += `\n${meu_endereco.cidade}-${meu_endereco.uf} / ${meu_endereco.cep} - ${meu_endereco.complemento}`;
+            text += `\n\n*Total(com a entrega):R$ ${valor_carrinho.toFixed(2).replace('.',',')}*`;
+           
+            var itens = '';
+            //console.log(itens)
+
+            $.each(meu_carrinho, (i, e)=>{
+               
+                itens += `*${e.qtd}x* ${e.name}..........R$ ${e.price.toFixed(2).replace('.',',')}\n`;
+               //ultimo item
+                if((i + 1)==meu_carrinho.length){
+                   
+                    text = text.replace(/\${itens}/g, itens);
+                    console.log(itens)
+               
+                }
+            
+            })
+            return;
+        }   
 
             
 
