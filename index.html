@@ -18,30 +18,30 @@
     </a>
 <section class="header">
  <div class="container">
-    <nav class="navbar navbar-expand-lg pl-0 pr-0">
-        <a href="#" class="navbar-brand">
-            <img src="./img/logo.png" alt="" width="160" class="img-logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
-            <span class="navbar-toggler-icon">
-                <i class="fas fa-bars"></i>
-            </span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto mr-auto">
-                <li class="nav-item"><a href="#reservas" class="nav-link"><b>Reserva</b></a></li>
-                <li class="nav-item"><a href="#servicos" class="nav-link"><b>Serviços</b></a></li>
-                <li class="nav-item"><a href="#cardapio" class="nav-link"><b>Cardapios</b></a></li>
-                <li class="nav-item"><a href="#depoimentos" class="nav-link"><b>Depoimentos</b></a></li>
-            </ul>
-                
-            <button onclick="cardapio.metodos.abrirCarrinho(true)" class="btn btn-icon btn-white botao-carrinho">
-                Meu carrinho
-                <span class="btn-icon-carrinho">
-                    <div class="badge-total-carrinho total-carrinho-in-btn-carrinho hidden">0</div>
-                    <i class="fas fa-shopping-bag"></i>
-                </span>
-            </button>        
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">
+                <img src="./img/logo.png" alt="" width="160" class="img-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dropDowMenu" aria-controls="dropDowMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="dropDowMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="#reservas" class="nav-link"><b>Reserva</b></a></li>
+                    <li class="nav-item"><a href="#servicos" class="nav-link"><b>Serviços</b></a></li>
+                    <li class="nav-item"><a href="#cardapio" class="nav-link"><b>Cardapios</b></a></li>
+                    <li class="nav-item"><a href="#depoimentos" class="nav-link"><b>Depoimentos</b></a></li>
+                </ul>
+                    
+                <button onclick="cardapio.metodos.abrirCarrinho(true)" class="btn btn-icon btn-white botao-carrinho">
+                    Meu carrinho
+                    <span class="btn-icon-carrinho">
+                        <div class="badge-total-carrinho total-carrinho-in-btn-carrinho hidden">0</div>
+                        <i class="fas fa-shopping-bag"></i>
+                    </span>
+                </button>        
+            </div>
         </div>
     </nav>
  </div>
@@ -475,9 +475,10 @@
 </div>
     <!-- End Modal Carrinho de compras-->
 <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
+<script type="text/javascript" src="./js/popper.min.js"></script>
 <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="./js/modernizr-3.5.0.min.js"></script>
-<script type="text/javascript" src="./js/popper.min.js"></script>
 <script type="text/javascript" src="./js/dados.js"></script>
 <script type="text/javascript" src="./js/app.js"></script>
 
