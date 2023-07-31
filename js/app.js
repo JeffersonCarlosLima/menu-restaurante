@@ -1,13 +1,14 @@
 $(document).ready(function(){
     cardapio.metodos.obterItensCardapio();
 })
-var cardapio = {};
-var meu_carrinho = [];
-var valor_carrinho = 0;
-var valor_entrega = 6;
+let cardapio = {};
+let meu_carrinho = [];
+let valor_carrinho = 0;
+let valor_entrega = 6;
 
-var meu_endereco = null;
+let meu_endereco = null;
 
+let celular_empresa = '5563984908862';
 
 cardapio.eventos={
     init:() => {
@@ -19,7 +20,7 @@ cardapio.eventos={
 cardapio.metodos={
     //obtem a lista de itens json co cardapio
     obterItensCardapio:(categoria = 'burgers', verMais = false)=>{
-        var filtro = MENU[categoria];
+        let filtro = MENU[categoria];
         if(!verMais){
             $("#itensCardapio").html('')
             $("#btnVerMais").removeClass('hidden')
@@ -54,7 +55,7 @@ cardapio.metodos={
     //clique no botão no ver mais
     verMais:() =>{
         //categoria ativa
-        var ativo = $(".container-menu a.active").attr('id').split('menu-')[1]; //[menu-][burgers]
+        let ativo = $(".container-menu a.active").attr('id').split('menu-')[1]; //[menu-][burgers]
         cardapio.metodos.obterItensCardapio(ativo,true)
         $("#btnVerMais").addClass('hidden');
     },
@@ -79,7 +80,7 @@ cardapio.metodos={
         let qtdAtual = parseInt($("#qtd-" + id).text())
         if (qtdAtual > 0){
             //obter a categoria ativa
-            var categoria = $(".container-menu a.active").attr('id').split('menu-')[1];
+            let categoria = $(".container-menu a.active").attr('id').split('menu-')[1];
             //obter a lista de itens
             let filtro = MENU[categoria];
 
@@ -108,7 +109,7 @@ cardapio.metodos={
     },
     //Atualiza o bag de total de itens adicionados ao carrinho dos botões do carrinho
     atualizaBagTotal:() => {
-        var total = 0;
+        let total = 0;
 
         $.each(meu_carrinho,(i, e)=>{
 
@@ -337,14 +338,14 @@ cardapio.metodos={
 
     },
     buscarCEP:()=>{
-        //cria variavel com valor do CEP digitado(Regexp)
-        var CEP = $("#txtCEP").val().trim().replace(/\D/g,'');
+        //cria letiavel com valor do CEP digitado(Regexp)
+        let CEP = $("#txtCEP").val().trim().replace(/\D/g,'');
 
         
         
         if(CEP != ""){
             //expressao regurar para validacao do cep
-            var validacep = /^[0-9]{8}/;
+            let validacep = /^[0-9]{8}/;
 
             //verificar se o cep possui os valores
             if(validacep.test(CEP)){
@@ -464,41 +465,31 @@ cardapio.metodos={
     },
     //envia o pedido pelo whatsapp
     //atualiza o link do botao do whatsapp
-    //https://wa.me/55+DDD+Numero?text=Mensagem
-    finalizarPedido:()=>{
-
-        //console.log("Enviando Pedido");
-
-        if(meu_carrinho.length > 0 && meu_endereco != null){
-            var text = 'Ola gostaria de fazer um pedido:';
-            text += `\n *Itens do pedido:*\n\n\${itens}`;
-            text += '\n*Endereco de entrega:*';
-            text += `\n${meu_endereco.endereco}, ${meu_endereco.bairro}, ${meu_endereco.num}`;
-            text += `\n${meu_endereco.cidade}-${meu_endereco.uf} / ${meu_endereco.cep} - ${meu_endereco.complemento}`;
-            text += `\n\n*Total(com a entrega):R$ ${valor_carrinho.toFixed(2).replace('.',',')}*`;
-           
-            var itens = '';
-            //console.log(itens)
-
-            $.each(meu_carrinho, (i, e)=>{
-               
-                itens += `*${e.qtd}x* ${e.name}..........R$ ${e.price.toFixed(2).replace('.',',')}\n`;
-               //ultimo item
-                if((i + 1)==meu_carrinho.length){
-                   
-                    text = text.replace(/\${itens}/g, itens);
-                    console.log(itens)
-               
-                }
-            
-            })
-            return;
-        }   
-
-            
-
-
-    },
+    finalizarPedido: () => {
+        if (meu_carrinho.length > 0 && meu_endereco != null) {
+            let texto = 'Ola gostaria de fazer um pedido:';
+            let itens = '';
+    
+            $.each(meu_carrinho, (i, e) => {
+                itens += `*${e.qtd}x* ${e.name}..........R$ ${e.price.toFixed(2).replace('.', ',')}\n`;
+            });
+    
+            texto += `\n *Itens do pedido:*\n\n${itens}`;
+            texto += '\n*Endereço de entrega:8*';
+            texto += `\n${meu_endereco.endereco}, ${meu_endereco.bairro}, ${meu_endereco.num}`;
+            texto += `\n${meu_endereco.cidade}-${meu_endereco.uf} / ${meu_endereco.cep} - ${meu_endereco.complemento}`;
+            texto += `\n\n*Total (com a entrega): R$ ${(valor_carrinho + valor_entrega).toFixed(2).replace('.', ',')}*`;
+    
+            console.log(texto);
+    
+            let encode = encodeURI(texto);
+            let URL = `https://wa.me/${celular_empresa}?text=${encode}`;
+            //https://wa.me/55+DDD+Numero?text=Mensagem
+            $('#btnEtapaResumo').attr('href', URL);
+        }
+    }
+    
+    
 },
 
 
