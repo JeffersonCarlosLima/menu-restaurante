@@ -13,6 +13,8 @@ let celular_empresa = '5563984908862';
 cardapio.eventos={
     init:() => {
         cardapio.metodos.obterItensCardapio();
+        cardapio.metodos.carregarBotaoReserva();
+
     }
 }
 
