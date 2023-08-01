@@ -487,8 +487,14 @@ cardapio.metodos={
             //https://wa.me/55+DDD+Numero?text=Mensagem
             $('#btnEtapaResumo').attr('href', URL);
         }
-    }
-    
+    },
+    carregarBotaoReserva: ()=>{
+        var texto = 'Ola! gostaria de fazer uma *reserva*';
+        let encode = encodeURI(texto);
+        let URL = `https://wa.me/${celular_empresa}?text=${encode}`;
+        $('#btnReserva').attr('href', URL);
+
+    },
     
 },
 
