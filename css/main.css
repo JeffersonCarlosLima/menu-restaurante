@@ -886,11 +886,9 @@ select.form-control{
     .price-produto{
         font-size: 16px;
     }
-    .img-produto{
+    .item-carrinho .img-produto{
         width: 48px;
     }
-    .img-produto img{
-        width: 50% !important;
-    }
+
    
 }
