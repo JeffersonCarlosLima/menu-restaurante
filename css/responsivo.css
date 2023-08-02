@@ -151,7 +151,10 @@
        margin-left: 8px;
        margin-right: 8px;
     }
-
+    .pr-5{
+        padding: 0px !important;
+        text-align: justify;
+    }
     .card-secundary {
         padding: 32px;
         border-radius: 32px;
