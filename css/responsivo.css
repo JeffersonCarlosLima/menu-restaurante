@@ -97,26 +97,35 @@
     .card-item {
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        gap: 16px;
+        justify-content: space-between;
         margin-bottom: 0px !important;
         width: 100%;
+        padding: 16px !important;
     }
 
     .card-item .img-produto {
-        width: 92px;
+        width: 100px;
+        margin-right: 16px!important;
+
     }
 
     .card-item .title-produto {
+        display: flex;
         font-size: 18px;
-        padding: 0;
         margin: 0;
+        width: 100%;
+        text-align: start;
     }
 
     .card-item .price-produto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 18px;
         padding: 0px !important;
-        margin: 0;
+        margin-left: 16px;
+        margin-top: 0;
+        width: 160px;
     }
 
     .card-item:hover {
@@ -169,8 +178,11 @@
         padding: 2px 0px;
         width: 24px;
     }
-    .item-carrinho .btn-mais , .btn-menos{
-        padding: 2px 8px;
+    .item-carrinho .btn-mais{
+        padding: 2px 8px !important;
+    }
+    .item-carrinho .btn-menos{
+        padding: 8px;
     }
     .carrinho-vazio{
         font-size: 16px;
