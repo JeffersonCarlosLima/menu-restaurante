@@ -73,11 +73,15 @@
     }
 
     .container-menu {
-        overflow-x: auto;
+        overflow-x: scroll;
         overflow-y: hidden;
         /*hidden*/
         display: flex;
         padding-bottom: 20px !important;
+        padding-left: 450px !important;
+        padding-right: 450px !important;
+        width: max-content;
+        white-space: nowrap;
 
     }
 
@@ -96,6 +100,7 @@
         justify-content: center;
         gap: 16px;
         margin-bottom: 0px !important;
+        width: 100%;
     }
 
     .card-item .img-produto {
