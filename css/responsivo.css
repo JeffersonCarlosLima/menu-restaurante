@@ -100,4 +100,8 @@
         gap: 16px;
         padding: 16px !important;
     }
+    .card-secundary{
+        padding: 32px;
+        border-radius: 32px;
+    }
 }
