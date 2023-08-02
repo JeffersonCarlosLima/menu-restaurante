@@ -140,6 +140,7 @@
     .card-secundary {
         padding: 32px;
         border-radius: 32px;
+        margin: 0px 32px;
     }
 
     .hint-title {

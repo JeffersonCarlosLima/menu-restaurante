@@ -495,7 +495,7 @@ cardapio.metodos={
         let encode = encodeURI(texto);
         let URL = `https://wa.me/${celular_empresa}?text=${encode}`;
         $('#btnReserva').attr('href', URL);
-
+        return
     },
     
 },
