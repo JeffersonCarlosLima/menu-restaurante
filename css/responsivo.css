@@ -144,6 +144,9 @@
         height: 60px;
         font-size: 24px;
     }
+    #btnVerMais{
+        margin-top: 16px !important;
+    }
     .modal-full{
         padding: 24px;
     }
