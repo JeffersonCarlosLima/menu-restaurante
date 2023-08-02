@@ -50,11 +50,20 @@
         font-size: 16px;
         text-align: justify;
     }
-
+    
     .btn-white,
     .btn-yellow {
         padding: 14px 24px;
+        font-size: 14px;
     }
+    .botoes-banner a{
+        width: 100%;
+        
+    }
+    .botoes-banner .btn-icon-left{
+    padding: 8px 16px 8px 8px !important;
+    }
+
 
     h1 {
         font-size: 32px;
@@ -72,6 +81,10 @@
         padding-top: 50px;
         padding-bottom: 50px;
     }
+    .card-servicos{
+        margin-top: 24px;
+    }
+    
     .card-item{
         flex-direction: row;
         align-items: center;
@@ -103,5 +116,10 @@
     .card-secundary{
         padding: 32px;
         border-radius: 32px;
+    }
+    .hint-title{
+        display: flex;
+        justify-content: center;
+        text-align: center;
     }
 }
