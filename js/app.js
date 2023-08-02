@@ -503,7 +503,7 @@ cardapio.metodos={
 
 cardapio.templates = {
     item: `
-        <div class="col-sm-6 col-md-3 p-2 mb-5">
+        <div class="col-12 col-sm-6 col-md-3 p-2">
             <div class="card card-item" id="\${id}">
                 <div class="img-produto">
                     <img src="\${img}"/>
