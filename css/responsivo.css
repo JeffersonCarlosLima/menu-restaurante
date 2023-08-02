@@ -4,18 +4,67 @@
 /* col- (tablet e celular) <=< 576px a 767px */
 
 @media screen and (max-width: 767px) {
-    .col-one{
-        padding: 32px 0 !important;
+    .col-one {
+        padding: 0px 32px !important;
     }
-    .no-mobile{
+
+    .no-mobile {
         display: none;
     }
-   .navbar-collapse{
-    background-color: var(--color-secundary);
-    padding: 16px;
-    border-radius: 40px;
-   }
-   .navbar-collapse .btn-white{
-    margin-top: 20px;
-   }
+
+    .navbar-collapse {
+        background-color: var(--color-secundary);
+        padding: 16px;
+        border-radius: 40px;
+        text-align: center;
+    }
+
+    .nav-item {
+        padding: 16px;
+    }
+
+    .navbar-collapse .btn-white {
+        margin-top: 20px;
+        padding: 8px 8px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .navbar-collapse .btn-icon-carrinho {
+        display: none !important;
+    }
+
+    .banner {
+
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+    }
+
+    .text-banner h1 {
+        font-size: 32px;
+
+    }
+
+    .text-banner p {
+        font-size: 16px;
+    }
+
+    .btn-white,
+    .btn-yellow {
+        padding: 14px 24px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+    .container-menu{
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-left: 8px !important;
+        margin-right: 8px !important;
+    }
+    .container-menu .btn-white{
+        margin: 0 !important;
+    }
 }
