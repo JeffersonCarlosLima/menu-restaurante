@@ -50,18 +50,20 @@
         font-size: 16px;
         text-align: justify;
     }
-    
+
     .btn-white,
     .btn-yellow {
         padding: 14px 24px;
         font-size: 14px;
     }
-    .botoes-banner a{
+
+    .botoes-banner a {
         width: 100%;
-        
+
     }
-    .botoes-banner .btn-icon-left{
-    padding: 8px 16px 8px 8px !important;
+
+    .botoes-banner .btn-icon-left {
+        padding: 8px 16px 8px 8px !important;
     }
 
 
@@ -69,7 +71,8 @@
         font-size: 32px;
         text-align: center;
     }
-    .container-menu{
+
+    .container-menu {
         overflow-x: auto;
         overflow-y: hidden;
         /*hidden*/
@@ -77,35 +80,41 @@
         padding-bottom: 20px !important;
 
     }
-    .servicos{
+
+    .servicos {
         padding-top: 50px;
         padding-bottom: 50px;
     }
-    .card-servicos{
+
+    .card-servicos {
         margin-top: 24px;
     }
-    
-    .card-item{
+
+    .card-item {
         flex-direction: row;
         align-items: center;
         justify-content: center;
         gap: 16px;
         margin-bottom: 0px !important;
     }
-    .card-item .img-produto{
+
+    .card-item .img-produto {
         width: 92px;
     }
-    .card-item .title-produto{
+
+    .card-item .title-produto {
         font-size: 18px;
         padding: 0;
         margin: 0;
     }
-    .card-item .price-produto{
+
+    .card-item .price-produto {
         font-size: 18px;
         padding: 0px !important;
         margin: 0;
     }
-    .card-item:hover{
+
+    .card-item:hover {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -113,13 +122,59 @@
         gap: 16px;
         padding: 16px !important;
     }
-    .card-secundary{
+
+    .card-secundary {
         padding: 32px;
         border-radius: 32px;
     }
-    .hint-title{
+
+    .hint-title {
         display: flex;
         justify-content: center;
         text-align: center;
+    }
+
+    .btn-carrinho {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    .modal-full{
+        padding: 24px;
+    }
+    .item-carrinho{
+        padding: 8px  0px!important;
+    }
+    .item-carrinho .title-produto {
+        font-size: 16px;
+    }
+
+    .item-carrinho .img-produto {
+        width: 70px;
+    }
+
+    .item-carrinho .price-produto {
+        font-size: 14px;
+    }
+    .item-carrinho .add-numero-itens{
+        font-size: 14px;
+        padding: 2px 0px;
+        width: 24px;
+    }
+    .item-carrinho .btn-mais , .btn-menos{
+        padding: 2px 8px;
+    }
+    .carrinho-vazio{
+        font-size: 16px;
+    }
+    .title-carrinho{
+        font-size: 16px;
+    }
+    .container-total a , span, i{
+        font-size: 14px;
+        gap: 8px;
+    }
+    .container-total span i{
+        margin-right: 8px;
     }
 }
