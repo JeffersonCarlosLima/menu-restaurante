@@ -71,17 +71,17 @@
         font-size: 32px;
         text-align: center;
     }
-
+    .container-do-container-meu{
+        width: 100%;
+    }
     .container-menu {
-        overflow-x: scroll;
+        overflow-x: auto;
         overflow-y: hidden;
         /*hidden*/
         display: flex;
-        padding-bottom: 20px !important;
-        padding-left: 450px !important;
-        padding-right: 450px !important;
-        width: max-content;
-        white-space: nowrap;
+        justify-content: stretch;
+        align-items: center;
+        padding: 20px  16px!important;
 
     }
 
