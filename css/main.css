@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'PoppinsMedium';
     src: url('../fonts/Poppins-Medium.otf');
@@ -825,70 +826,4 @@ select.form-control{
     border-radius: 100%;
     background-color: var(--color-secundary);
     color: var(--color-primary);
-}
-@media screen and (max-width: 768px) {
-    html{
-        width: auto;
-        height: auto;
-    }
-    .banner, .servicos{
-        display: none;
-    }
-
-    .container-menu{
-        width: 100%;
-        flex-wrap: wrap;
-    }
-   .hint-title{
-    font-size: 14px;
-    }
-    h1 b {
-        font-size: 20px;
-    margin-top: 8px;
-
-    }
-    .depoimentos{
-        display: none;
-    }
-    .reserva{
-        display: none;
-    }
-    .card{
-        margin: 0px 16px;
-    }
-    .logo-footer{
-        width: 80px;
-    }
-    .container-text-footer p {
-        font-size: 14px;
-        width: 100%;
-        margin: 8px 0;
-    }
-    .container-redes-footer{
-        width: 100%;
-    }
-    .btn-social{
-        width: 32px;
-        height: 32px;
-    }
-    .item-carrinho{
-        width: 100%;
-    }
-    .info-produto{
-        width: 100%;
-    }
-    .dados-produto{
-        width: 100%;
-    }
-    .title-produto{
-        font-size: 14px !important;
-    }
-    .price-produto{
-        font-size: 16px;
-    }
-    .item-carrinho .img-produto{
-        width: 48px;
-    }
-
-   
 }

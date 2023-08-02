@@ -1,3 +1,5 @@
+import 'animate.css';
+
 $(document).ready(function(){
     cardapio.metodos.obterItensCardapio();
 })

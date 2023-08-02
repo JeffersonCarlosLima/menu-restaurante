@@ -1,0 +1,21 @@
+/* col-lg (desktops) >= 992px */
+/* col-md (tablet) <=< 768px a 991px */
+/* col-sm (celular) <=< 576px a 767px */
+/* col- (tablet e celular) <=< 576px a 767px */
+
+@media screen and (max-width: 767px) {
+    .col-one{
+        padding: 32px 0 !important;
+    }
+    .no-mobile{
+        display: none;
+    }
+   .navbar-collapse{
+    background-color: var(--color-secundary);
+    padding: 16px;
+    border-radius: 40px;
+   }
+   .navbar-collapse .btn-white{
+    margin-top: 20px;
+   }
+}
