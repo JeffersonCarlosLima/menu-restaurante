@@ -183,16 +183,24 @@
     }
     .item-carrinho .title-produto {
         font-size: 14px;
+        overflow: hidden;
     }
     .modal-full .img-produto{
         width: 48px !important;
         margin: 0px;
+    }
+    .modal-full .dados-produto{
+        padding-right: 0px !important;
+        padding-left: 8px !important;
+        overflow: hidden;
+        width: 120px;
     }
     .item-carrinho .price-produto {
         font-size: 14px;
     }
     .info-produto{
         width: fit-content;
+        
     }
     .item-carrinho .add-numero-itens{
         font-size: 14px;
