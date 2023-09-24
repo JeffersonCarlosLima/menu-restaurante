@@ -13,14 +13,14 @@
     --color-black-heavyu: #000000;
     --color-text: #4f4f4f;
     --color-text-alt: #90908e;
-    --color-primary: #ffbf00;
+    --color-primary: #5271FF;
     --color-secundary: #fff2cc;
     --color-white: #ffff;
     --color-red: #e74c3c;
     --color-green: #2ecc71;
     --color-separate: #cccccc;
     --shadow-button:0px 8px 20px rgba(0, 0, 0, 0.2);
-    --shadow-button-vcardapio:8px 10px 15px -3px var(--color-primary);
+    --shadow-button-vcardapio: 8px 10px 15px -3px var(--color-primary);
     --border-radius-button:16px;
     --border-radius-ico:16px;
     --transitionall-03s: all 0.3s ease-in-out;
@@ -36,24 +36,25 @@ html, body {
 b{
     font-family: 'PoppinsMedium';
 }
+.titulo-cardapio{
+    font-size: 24px;
+    
+}
+.top-bar{
+    width: calc((var(--size-screen) * .9));
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    /*    margin-left: (calc(((var(--size-screen)) / 2)));*/
+    /*    left:(calc(-((((var(--size-screen)))* ((100%))/100)* 1)/2)); */
+    /*     top:-1rem;*/
+}
 .hidden{
     display: none!important ;
 }
-.nav-link{
-    color: var(--color-black) !important;
-    padding: 0 32px !important;
-}
 
-.navbar-brand{
-    margin-left: -25px;
-}
-
-.botao-carrinho{
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
 .btn-white{
     background-color: var(--color-white);
     color: var(--color-black) !important;
@@ -106,7 +107,7 @@ b{
 }
 .text-benner h1{
     color: var(--color-black);
-    font-size: 60px;
+    font-size: 24px;
 }
 .text-benner p{
     margin: 16px 0 16px 0px !important;
@@ -282,7 +283,6 @@ b{
     background-image: url(../img/bg-icons-2.png);
 }
 .cardapio{
-    padding-top: 50px;
     margin-bottom: 150px;
 }
 
@@ -313,18 +313,6 @@ b{
     height: 40px;
     margin-bottom: 8px;
 
-}
-.card-item:hover{
-    padding-bottom:50px;
-}
-.card-item:hover .title-produto{
-    display: none;
-    transition: var(--transitionall-03s);
-}
-
-.card-item .price-produto{
-    color: var(--color-primary);
-    font-size: 24px;
 }
 
 .card-item .add-carrinho{
@@ -368,18 +356,7 @@ b{
     margin-left: 16px;
     color: var(--color-white);
 }
-.card-item:hover{
-    background-color: var(--color-primary);
-    transition: var(--transitionall-03s);
-}
-.card-item:hover .add-carrinho{
-    
-    display: flex;
-}
-.card-item:hover .price-produto{
-    color: var(--color-white);
-    margin-top: 8px;
-}
+
 
 .card-depoimento{
     width: 350px;
@@ -423,48 +400,7 @@ b{
 #depoimento-3 .imagem-depoimento{
     background-image: url(../img/joao.jpg);
 }
-.nome-depoimento{
-    color: var(--color-black);
-    font-size: 22px;
-    margin-bottom: 8px;
-}
-.nota-depoimento{
-    color: var(--color-primary);
-}
-.nota-depoimento span{
-    color:var(--color-black);
-}
-.texto-depoimento{
-    display: flex;
-    font-size: 16px;
-    color: var(--color-black);
-    
 
-}
-.texto-depoimento i{
-    font-size: 35px;
-    color: var(--color-primary);
-}
-
-.texto-depoimento i:first-child{
-    padding-left: 10px;
-    padding-right: 35px;
-
-}
-.texto-depoimento i:last-child{
-    padding-left: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-}
-.btn-depoimentos{
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-}
-.reserva{
-    padding: 100px 0 150px 0;
-}
 .card-secundary{
     background-color: var(--color-secundary);
     border-radius: 70px;
