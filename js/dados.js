@@ -5,21 +5,21 @@ var MENU = {
             "img": "./img/cardapio/churrasco/joes-kc-ribs-brisket-and-burnt-ends.6710e994980e485e6441b794717ad6fb.jpg",
             "name": "Joe's KC BBQ",
             "dsc": "Joe's KC Ribs, Brisket & Burnt Ends",
-            "price": 34.99
+            "price": 110.99
         },
         {
             "id": "005-kings-carolina-oink-sampler",
             "img": "./img/cardapio/churrasco/carolina-bbq-oink-sampler.1340b5a10cedc238cb2280306dd1d5a5.jpg",
             "name": "Kings BBQ",
             "dsc": "Carolina BBQ Oink Sampler",
-            "price": 50.00
+            "price": 89
         },
         {
             "id": "texas-monthlys-1-bbq-brisket",
             "img": "./img/cardapio/churrasco/texas-monthlys-1-bbq-brisket.1006a061be7acae03992e420fbca995a.jpg",
-            "name": "Picanha",
+            "name": "Snow's BBQ",
             "dsc": "Texas Monthly's #1 BBQ Brisket",
-            "price": 80.00
+            "price": 199
         },
         {
             "id": "whole-brisket-texas-bbq-sauce",
